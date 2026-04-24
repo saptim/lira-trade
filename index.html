@@ -21,13 +21,21 @@
     <div class="logo">
       <img src="logo.png" alt="ТОО Торговый дом Лира" style="height: 50px;">
     </div>
-      <nav class="nav">
-        <a href="#about" data-tr="menu-about">О нас</a>
-        <a href="#products" data-tr="menu-products">Продукция</a>
-        <a href="#advantages" data-tr="menu-advantages">Преимущества</a>
-        <a href="#contacts" data-tr="menu-contacts">Контакты</a>
-      </nav>
+     <!-- Бургер-иконка (видна только на мобильных) -->
+      <div class="burger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
+
+      <!-- Навигация -->
+    <nav class="nav" id="mainNav">
+      <a href="#about" data-tr="menu-about">О нас</a>
+      <a href="#products" data-tr="menu-products">Продукция</a>
+      <a href="#advantages" data-tr="menu-advantages">Преимущества</a>
+      <a href="#contacts" data-tr="menu-contacts">Контакты</a>
+    </nav>
+  </div>
   </header>
 
   <!-- Герой-блок -->

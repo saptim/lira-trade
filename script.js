@@ -24,21 +24,18 @@ async function loadProducts() {
 if (document.querySelector('.products-grid')) {
   loadProducts();
 }
-// Управление уведомлением о куки
-function acceptCookies() {
-  document.getElementById('cookie-banner').style.display = 'none';
-  // Сохраняем согласие в localStorage
-  localStorage.setItem('cookiesAccepted', 'true');
+// Управление бургер-меню
+function toggleMenu() {
+  const nav = document.getElementById('mainNav');
+  const burger = document.querySelector('.burger');
+  nav.classList.toggle('show');
+  burger.classList.toggle('active');
 }
 
-// Показываем баннер, только если пользователь ещё не принял
-window.onload = function () {
-  const banner = document.getElementById('cookie-banner');
-  if (!banner) return;
-
-  if (localStorage.getItem('cookiesAccepted') === 'true') {
-    banner.style.display = 'none';
-  } else {
-    banner.style.display = 'flex';
-  }
-};
+// Закрыть меню при клике на ссылку
+document.querySelectorAll('.nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('mainNav').classList.remove('show');
+    document.querySelector('.burger').classList.remove('active');
+  });
+});
