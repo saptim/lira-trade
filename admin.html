@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Админка — Торговый дом "Лира"</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .admin-form {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .admin-form h2 {
+      text-align: center;
+      color: #0056b3;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .form-group textarea {
+      height: 100px;
+    }
+    .btn-submit {
+      background: #c60c30;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      display: block;
+      width: 100%;
+    }
+    .btn-submit:hover {
+      background: #a00a27;
+    }
+    .message {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: 500;
+    }
+    .success { color: green; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="admin-form">
+      <h2>Добавить товар</h2>
+      <form id="productForm">
+        <div class="form-group">
+          <label>Название</label>
+          <input type="text" id="name" required />
+        </div>
+        <div class="form-group">
+          <label>Описание</label>
+          <textarea id="description" required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Путь к изображению (например: images/kolodki.jpg)</label>
+          <input type="text" id="image" placeholder="images/photo.jpg" />
+        </div>
+        <button type="submit" class="btn-submit">Добавить товар</button>
+      </form>
+      <div id="message" class="message"></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('productForm').onsubmit = async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const description = document.getElementById('description').value;
+      const image = document.getElementById('image').value || 'https://via.placeholder.com/300x200?text=Товар';
+
+      const newProduct = { name, description, image };
+
+      alert('Товар готов к добавлению! Скопируйте этот JSON и вставьте в файл products.json:\\n\\n' + JSON.stringify(newProduct, null, 2));
+
+      document.getElementById('message').innerHTML = '✅ Готово! Вставьте объект в products.json';
+      document.getElementById('message').className = 'message success';
+
+      document.getElementById('productForm').reset();
+    };
+  </script>
+</body>
+</html>
