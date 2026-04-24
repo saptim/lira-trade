@@ -24,3 +24,21 @@ async function loadProducts() {
 if (document.querySelector('.products-grid')) {
   loadProducts();
 }
+// Управление уведомлением о куки
+function acceptCookies() {
+  document.getElementById('cookie-banner').style.display = 'none';
+  // Сохраняем согласие в localStorage
+  localStorage.setItem('cookiesAccepted', 'true');
+}
+
+// Показываем баннер, только если пользователь ещё не принял
+window.onload = function () {
+  const banner = document.getElementById('cookie-banner');
+  if (!banner) return;
+
+  if (localStorage.getItem('cookiesAccepted') === 'true') {
+    banner.style.display = 'none';
+  } else {
+    banner.style.display = 'flex';
+  }
+};
