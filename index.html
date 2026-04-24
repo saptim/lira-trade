@@ -1,96 +1,96 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Торговый дом "Лира" — Поставки для ЖД</title>
+  <title>ТОО "Торговый дом "Лира"</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
+  <!-- Переключатель языков -->
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-lang="ru">RU</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="kz">KZ</button>
+  </div>
+
+  <!-- Шапка -->
   <header class="header">
     <div class="container">
-      <div class="logo">
-          <img src="logo.png" alt="ТОО Торговый дом Лира" style="height: 50px;">
-      </div>
+      <div class="logo">Лира</div>
       <nav class="nav">
-        <a href="#about">О нас</a>
-        <a href="#products">Продукция</a>
-        <a href="#advantages">Преимущества</a>
-        <a href="#contacts">Контакты</a>
+        <a href="#about" data-tr="menu-about">О нас</a>
+        <a href="#products" data-tr="menu-products">Продукция</a>
+        <a href="#advantages" data-tr="menu-advantages">Преимущества</a>
+        <a href="#contacts" data-tr="menu-contacts">Контакты</a>
       </nav>
     </div>
   </header>
 
+  <!-- Герой-блок -->
   <section class="hero">
     <div class="container">
-      <h1>ТОО "Торговый дом "Лира"</h1>
-      <p class="subtitle">Сертифицированные поставки для железнодорожной отрасли</p>
+      <h1 data-tr="hero-title">ТОО "Торговый дом "Лира""</h1>
+      <p class="subtitle" data-tr="hero-subtitle">Сертифицированные поставки для железнодорожной отрасли</p>
+      <a href="#products" class="btn-primary" data-tr="hero-button">Продукция</a>
     </div>
   </section>
 
+  <!-- О компании -->
   <section id="about" class="section">
     <div class="container">
-      <h2>О компании</h2>
-      <p>
-        ТОО "Торговый дом "Лира"" специализируется на поставках оборудования 
-        и комплектующих для предприятий железнодорожного транспорта. 
-        Мы работаем строго с сертифицированной продукцией, соответствующей 
-        стандартам отрасли.
+      <h2 data-tr="about-title">О компании</h2>
+      <p data-tr="about-text">
+        Специализируемся на поставках оборудования и комплектующих для предприятий железнодорожного транспорта. Работаем с сертифицированной продукцией, соответствующей стандартам отрасли.
       </p>
     </div>
   </section>
 
+  <!-- Продукция -->
   <section id="products" class="section bg-light">
     <div class="container">
-      <h2>Продукция</h2>
-      <p>
-        В нашем ассортименте — комплектующие и оборудование для пассажирских вагонов 
-        и инфраструктуры железных дорог. 
-      </p>
-      <div class="products-grid">
-        <!-- Товары загружаются из products.json -->
+      <h2 data-tr="products-title">Продукция</h2>
+      <div class="products-grid" id="products-list">
+        <!-- Загружается из products.json -->
       </div>
-      <p style="margin-top: 20px; font-style: italic;">
-        * Возможность добавления новых товаров — в разработке
-      </p>
     </div>
   </section>
 
+  <!-- Преимущества -->
   <section id="advantages" class="section">
     <div class="container">
-      <h2>Почему мы?</h2>
+      <h2 data-tr="advantages-title">Почему мы?</h2>
       <ul class="advantages-list">
-        <li>✅ Единственная компания с сертификатом качества продукции компании<strong>ORKA</strong></li>
-        <li>✅ Специализация исключительно на железнодорожной отрасли</li>
-        <li>✅ Прямые поставки и надёжная логистика</li>
-        <li>✅ Долгосрочное сотрудничество с предприятиями РК и СНГ</li>
+        <li data-tr="advantage-1">✅ Сертификат качества продукции ORKA</li>
+        <li data-tr="advantage-2">✅ Специализация на ЖД отрасли</li>
+        <li data-tr="advantage-3">✅ Надёжная логистика</li>
+        <li data-tr="advantage-4">✅ Долгосрочное сотрудничество</li>
       </ul>
     </div>
   </section>
 
+  <!-- Контакты -->
   <section id="contacts" class="section bg-light">
     <div class="container">
-      <h2>Контакты</h2>
+      <h2 data-tr="contacts-title">Контакты</h2>
       <address>
         Email: <a href="mailto:Liratrade@yandex.kz">Liratrade@yandex.kz</a><br>
-        Телефон: <em>по запросу</em>
+        <span data-tr="contacts-phone">Телефон: по запросу</span>
       </address>
     </div>
   </section>
 
-<footer class="footer">
-  <div class="container">
-    <p>&copy; 2025 ТОО "Торговый дом "Лира"". Все права защищены.</p>
-    <p><a href="privacy.html" target="_blank" style="color: #ffcc00; text-decoration: underline; font-size: 0.9rem;">Политика конфиденциальности</a></p>
-  </div>
-</footer>
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span data-tr="footer-year">2025</span> ТОО "Торговый дом "Лира"". Все права защищены.</p>
+      <p><a href="privacy.html" target="_blank" data-tr="footer-privacy">Политика конфиденциальности</a></p>
+    </div>
+  </footer>
 
+  <!-- Скрипты -->
   <script src="script.js"></script>
-  <!-- Уведомление о файлах cookie -->
-<div id="cookie-banner" class="cookie-banner">
-  <p>Этот сайт использует файлы cookie для улучшения вашего опыта. Продолжая использовать сайт, вы соглашаетесь с <a href="privacy.html" target="_blank">политикой конфиденциальности</a>.</p>
-  <button onclick="acceptCookies()" class="btn-accept">Принять</button>
-</div>
+  <script src="i18n.js"></script>
 </body>
 </html>
