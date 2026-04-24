@@ -76,6 +76,7 @@ body {
   padding: 15px 20px;
 }
 
+/* === Логотип === */
 .logo {
   display: flex;
   align-items: center;
@@ -90,6 +91,13 @@ body {
 .logo img:hover {
   transform: scale(1.05);
 }
+
+/* === Навигация === */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
 .nav a {
   margin-left: 30px;
   text-decoration: none;
@@ -101,6 +109,38 @@ body {
 
 .nav a:hover {
   color: #c60c30;
+}
+
+/* === Бургер-меню === */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.burger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #0056b3;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
 }
 
 /* === Герой-блок === */
@@ -325,98 +365,12 @@ body {
 
 /* === Мобильная адаптация === */
 @media (max-width: 768px) {
-  .nav a {
-    display: block;
-    margin: 10px 0;
-  }
-
-  .header .container {
-    flex-direction: column;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .subtitle {
-    font-size: 1.2rem;
-  }
-
-  .section {
-    padding: 60px 0;
-  }
-
-  .section h2 {
-    font-size: 2rem;
-  }
-
-  .lang-switcher {
-    top: 10px;
-    right: 10px;
-    gap: 5px;
-  }
-
-  .lang-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 0.9rem;
-  }
-/* === Бургер-меню === */
-.burger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-  cursor: pointer;
-  z-index: 1100;
-}
-
-.burger span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: #0056b3;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* Анимация бургера при активации */
-.burger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.burger.active span:nth-child(2) {
-  opacity: 0;
-}
-.burger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
-}
-
-/* Скрытие меню на мобильных */
-.nav {
-  display: flex;
-  align-items: center;
-}
-
-.nav a {
-  margin-left: 30px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  font-size: 1.05rem;
-  transition: color 0.3s;
-}
-
-.nav a:hover {
-  color: #c60c30;
-}
-
-/* === Мобильная адаптация === */
-@media (max-width: 768px) {
+  /* Бургер */
   .burger {
     display: flex;
   }
 
+  /* Навигация */
   .nav {
     position: absolute;
     top: 100%;
@@ -442,16 +396,33 @@ body {
     font-size: 1.1rem;
   }
 
+  /* Контейнер шапки */
   .header .container {
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
   }
 
-  /* Переключатель языков — остаётся на месте */
+  /* Переключатель языков */
   .lang-switcher {
     top: 20px;
     right: 20px;
-    z-index: 1100;
+  }
+
+  /* Текст */
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section h2 {
+    font-size: 2rem;
   }
 }
