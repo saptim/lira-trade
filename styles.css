@@ -231,4 +231,62 @@ footer p {
 .btn-accept:hover {
   background: #e01136;
 }
+  /* Переключатель языков */
+.lang-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1100;
+  display: flex;
+  gap: 5px;
+  font-size: 0.9rem;
+}
+
+.lang-btn {
+  background: white;
+  border: 1px solid #0056b3;
+  color: #0056b3;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+  background: #0056b3;
+  color: white;
+}
+
+/* Кнопка */
+.btn-primary {
+  display: inline-block;
+  background: #c60c30;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 20px;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #e01136;
+}
+
+/* Заголовки как у Agregat */
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  color: #003d7a;
+}
 }
