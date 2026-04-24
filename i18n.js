@@ -64,7 +64,6 @@ const translations = {
   }
 };
 
-// Установка языка
 function setLanguage(lang) {
   const elements = document.querySelectorAll('[data-tr]');
   elements.forEach(el => {
@@ -80,12 +79,10 @@ function setLanguage(lang) {
   localStorage.setItem('siteLang', lang);
 }
 
-// Инициализация
 document.addEventListener('DOMContentLoaded', () => {
   const savedLang = localStorage.getItem('siteLang') || 'ru';
   setLanguage(savedLang);
 
-  // Переключение языка
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const lang = btn.getAttribute('data-lang');
